@@ -10,7 +10,7 @@ void testApp::setup(){
     mesh.setMode(OF_PRIMITIVE_POINTS);
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 198; i++) {
         // X value
         ofLogNotice("X: "+ofToString(csv.data[i][17]+" Y: "+ofToString(csv.data[i][18])+" Z: "+ofToString(csv.data[i][19])));
         //
