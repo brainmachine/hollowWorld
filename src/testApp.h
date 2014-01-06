@@ -27,6 +27,9 @@ public:
 	
     bool recordingMouse;
     
+    ofEasyCam cam;
+    ofMesh mesh;
+    
 };
 /*
  +2 ??? 

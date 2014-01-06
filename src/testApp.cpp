@@ -22,8 +22,12 @@ void testApp::setup(){
         // X value
         ofLogNotice("X: "+ofToString(csv.data[i][17]+" Y: "+ofToString(csv.data[i][18])+" Z: "+ofToString(csv.data[i][19])));
         //
-        //ofLogNotice();
-
+        //
+        float x = csv.getFloat(i, 17);
+        float y = csv.getFloat(i, 18);
+        float z = csv.getFloat(i, 19);
+        ofVec3f pos(x, y, z);
+        mesh.addVertex(pos);
     }
 	
 }
@@ -35,7 +39,11 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-
+    cam.begin();
+	ofScale(2, -2, 2); // flip the y axis and zoom in a bit
+	ofRotateY(90);
+	mesh.draw();
+	cam.end();
 }
 
 //--------------------------------------------------------------
