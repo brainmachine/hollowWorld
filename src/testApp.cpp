@@ -20,9 +20,9 @@ void testApp::setup(){
 	cout << csv.data[0].max_size() << endl;
     for (int i = 0; i < 10; i++) {
         // X value
-        ofLogNotice(ofToString(csv.data[i][22]));
+        ofLogNotice("X: "+ofToString(csv.data[i][17]+" Y: "+ofToString(csv.data[i][18])+" Z: "+ofToString(csv.data[i][19])));
         //
-        //ofLogNotice("Y: "+ofToString(csv.data[i][19]));
+        //ofLogNotice();
 
     }
 	
