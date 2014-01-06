@@ -2,10 +2,6 @@
 
 #include "testApp.h"
 
-
-
-
-
 //--------------------------------------------------------------
 void testApp::setup(){
 	
@@ -22,6 +18,9 @@ void testApp::setup(){
 	
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
+    for (int i = 0; i < 10; i++) {
+        ofLogNotice(ofToString(csv.data[i]));
+    }
 	
 }
 
