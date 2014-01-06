@@ -19,7 +19,7 @@ void testApp::setup(){
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
     for (int i = 0; i < 10; i++) {
-        ofLogNotice(ofToString(csv.data[i]));
+        ofLogNotice(ofToString(csv.data[i][18]));
     }
 	
 }
@@ -31,47 +31,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	
-	ofSetColor(0);
-	ofFill();
-	ofDrawBitmapString("CSV FILE", 200, 50);
-	
-	// Check how many rows exist.
-	ofDrawBitmapString("csv rows: " + ofToString(csv.numRows), 200, 70);
-	// Check how many column exist.
-	// For that we reat the first line from CSV. (data[0])
-	ofDrawBitmapString("csv cols: " + ofToString(csv.data[0].size()), 200, 90);
-	
-	// Print out all rows and cols.
-	for(int i=0; i<csv.numRows; i++) {
-		for(int j=0; j<csv.data[i].size(); j++) {
-			ofDrawBitmapString(csv.data[i][j], 200+j*100, 150+i*20);
-		}
-	}
-	
-	ofDrawBitmapString("CSV VECTOR STRING", 200, 350);
-	// Read a CSV row as simple String.
-	vector<string> dataExample = csv.getFromString("0x11120119][100][40][445][23][543][46][24][56][14][964][12", "][");
-	//cout << "dataExample[0]" << dataExample[0] << endl;
-	
-	// Print the hole CSV data string to console.
-	for(int i=0; i<dataExample.size(); i++) {
-		ofDrawBitmapString("[" + ofToString(i) + "]: " + ofToString(dataExample[i]), 200, 370+i*20 );
-	}
-	
-	// Show the current mouse recording state
-	ofDrawBitmapString("CSV RECORDER", 500, 350);
-	ofDrawBitmapString("csv rows: " + ofToString(csvRecorder.numRows), 500, 370);
-	
-	if (recordingMouse == true) {
-		ofDrawBitmapString("state: recording...", 500, 390);
-	}
-	else {
-		ofDrawBitmapString("state: ready", 500, 390);
-	}
-	
-	ofDrawBitmapString("CONTROLS", 200, 690);
-	ofDrawBitmapString("s = save csv data / x = clear csvRecorder data / r = save csvRecorder data", 200, 710);
+
 }
 
 //--------------------------------------------------------------
