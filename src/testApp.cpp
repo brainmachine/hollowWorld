@@ -4,18 +4,10 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-	
+	ofBackground(0, 0, 0);
 	// Load a CSV File.
 	csv.loadFile(ofToDataPath("hygxyzSmall.csv"));
-	
-	cout << "Print out a specific CSV value" << endl;
-	cout << csv.data[0][1] << endl;
-	// also you can write...
-	//cout << csv.data[0].at(1) << endl;
-	
-	cout << "Print out the first value" << endl;
-	cout << csv.data[0].front() << endl;
-	
+    mesh.setMode(OF_PRIMITIVE_POINTS);
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
     for (int i = 0; i < 10; i++) {
@@ -40,8 +32,8 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     cam.begin();
-	ofScale(2, -2, 2); // flip the y axis and zoom in a bit
-	ofRotateY(90);
+	//ofScale(2, -2, 2); // flip the y axis and zoom in a bit
+	//ofRotateY(90);
 	mesh.draw();
 	cam.end();
 }
