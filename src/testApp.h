@@ -28,3 +28,28 @@ public:
     bool recordingMouse;
     
 };
+/*
+ 01 StarID,
+ 02 HIP,
+ 03 HD,
+ 04 HR,
+ 05 Gliese,
+ 06 BayerFlamsteed,
+ 07 ProperName,
+ 08 RA,
+ 09 Dec,
+ 10 Distance,
+ 11 PMRA,
+ 12 PMDec,
+ 13 RV,
+ 14 Mag,
+ 15 AbsMag,
+ 16 Spectrum,
+ 17 ColorIndex,
+ 18 X,
+ 19 Y,
+ 20 Z,
+ 21 VX,
+ 22 VY,
+ 23 VZ
+ */

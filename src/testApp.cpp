@@ -21,6 +21,9 @@ void testApp::setup(){
     for (int i = 0; i < 10; i++) {
         // X value
         ofLogNotice(ofToString(csv.data[i][18]));
+        //
+        ofLogNotice(ofToString(csv.data[i][18]));
+
     }
 	
 }
