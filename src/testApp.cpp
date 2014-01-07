@@ -6,7 +6,7 @@
 void testApp::setup(){
 	ofBackground(0, 0, 0);
 	// Load a CSV File.
-	csv.loadFile(ofToDataPath("hygxyzSmall.csv"));
+	csv.loadFile(ofToDataPath("hygxyz.csv"));
     
     // Set mesh mode to points
     mesh.setMode(OF_PRIMITIVE_POINTS);
@@ -19,6 +19,7 @@ void testApp::setup(){
     camY = 0;
     camZ = 0;
     cam.setPosition(camX, camY, camZ);
+    
     // Get x, y, z coordinates from csv data
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
