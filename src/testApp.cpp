@@ -7,14 +7,20 @@ void testApp::setup(){
 	ofBackground(0, 0, 0);
 	// Load a CSV File.
 	csv.loadFile(ofToDataPath("hygxyzSmall.csv"));
-    mesh.setMode(OF_PRIMITIVE_POINTS);
-    ofEnableDepthTest();
-	glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
-	//glPointSize(3); // make the points bigger
     
+    // Set mesh mode to points
+    mesh.setMode(OF_PRIMITIVE_POINTS);
+    
+    // GL Settings
+	glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
+    
+    // Cam stuff
+    
+    // Get x, y, z coordinates from csv data
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
-    for (int i = 0; i < 2000; i++) {
+    ofLogNotice(ofToString(csv.data.size()));
+    for (int i = 0; i < csv.data.size(); i++) {
         // X value
         ofLogNotice("X: "+ofToString(csv.data[i][17]+" Y: "+ofToString(csv.data[i][18])+" Z: "+ofToString(csv.data[i][19])));
         //
@@ -41,7 +47,30 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-	
+	ofLogNotice(ofToString(key));
+    
+    // Up
+    if (key == 357) {
+        
+    }
+    
+    // Down
+    if (key == 359) {
+        
+    }
+    
+    // Left
+    if (key == 356) {
+        
+    }
+    
+    // Right
+    if (key == 358) {
+        
+    }
+     O:
+     O356:
+     O358:
 }
 
 //--------------------------------------------------------------

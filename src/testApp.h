@@ -32,7 +32,6 @@ public:
     
 };
 /*
- +2 ??? 
  
  00 StarID,
  01 HIP,
@@ -57,4 +56,5 @@ public:
  20 VX,
  21 VY,
  22 VZ
+ 
  */
