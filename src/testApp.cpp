@@ -52,15 +52,15 @@ void testApp::draw(){
 void testApp::keyPressed(int key){
 	ofLogNotice(ofToString(key));
     
-    // Up
+    // Up key - Forward
     if (key == 357) {
-        camY++;
+        camZ--;
     }
     
-    // Down
+    // Down key - backward
     else if (key == 359) {
-        camY--;
-    }
+        camZ++;
+            }
     
     // Left
     else if (key == 356) {
@@ -72,6 +72,16 @@ void testApp::keyPressed(int key){
         camX++;
     }
     
+    // U - Up
+    else if (key == 117) {
+        camY++;
+    }
+    
+    // J - Down
+    else if (key == 106) {
+        camY--;
+
+    }
     cam.setPosition(camX, camY, camZ);
 }
 
