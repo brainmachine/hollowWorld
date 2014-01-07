@@ -28,6 +28,7 @@ public:
     bool recordingMouse;
     
     ofEasyCam cam;
+    float camX, camY, camZ;
     ofMesh mesh;
     
 };

@@ -15,7 +15,10 @@ void testApp::setup(){
 	glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
     
     // Cam stuff
-    cam.setPosition(0, 0, 0);
+    camX = 0;
+    camY = 0;
+    camZ = 0;
+    cam.setPosition(camX, camY, camZ);
     // Get x, y, z coordinates from csv data
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;
@@ -51,23 +54,25 @@ void testApp::keyPressed(int key){
     
     // Up
     if (key == 357) {
-        
+        camY++;
     }
     
     // Down
     else if (key == 359) {
-        
+        camY--;
     }
     
     // Left
     else if (key == 356) {
-        
+        camX--;
     }
     
     // Right
     else if (key == 358) {
-        
+        camX++;
     }
+    
+    cam.setPosition(camX, camY, camZ);
 }
 
 //--------------------------------------------------------------
