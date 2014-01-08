@@ -20,7 +20,7 @@ void testApp::setup(){
     camY = 0;
     camZ = 0;
    // cam.setPosition(camX, camY, camZ);
-   // cam.setPosition(9.99632e+06,9.99632e+06,9.99632e+06); // start at the edge of the universe
+   
     speed = 1;
     jumpSize = 100;
     
@@ -49,9 +49,24 @@ void testApp::setup(){
         if (maxY < y) {
             maxY = y;
         }
-        
+        if (maxZ < z) {
+            maxZ = z;
+        }
+        if (minX > x) {
+            minX = x;
+        }
+        if (minY > y) {
+            minY = y;
+        }
+        if (minZ > z) {
+            minZ = z;
+        }
     }
-	ofLogNotice("maxX "+ofToString(maxX)+" maxY "+ofToString(maxY));
+    
+     cam.setPosition(maxX, maxY, maxZ); // start at the edge of the universe
+    
+	ofLogNotice("maxX "+ofToString(maxX)+" maxY "+ofToString(maxY)+" maxZ" + ofToString(maxZ));
+    ofLogNotice("minX "+ofToString(minX)+" minY "+ofToString(minY)+" minZ" + ofToString(minZ));
 }
 
 //--------------------------------------------------------------
