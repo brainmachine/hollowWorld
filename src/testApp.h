@@ -39,7 +39,7 @@ public:
     // Star mesh network
     ofMesh mesh;
     
-    
+    int counter;
     
 };
 /*

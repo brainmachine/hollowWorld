@@ -23,6 +23,7 @@ void testApp::setup(){
    
     speed = 1;
     jumpSize = 10;
+    counter = 0;
     
     // Max and min coordinates
     maxX, maxY, maxZ, minX, minY, minZ = 0;
@@ -71,7 +72,11 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    counter++;
+    if (counter < csv.data.size()) {
+        ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter),csv.getFloat(17, counter+1), csv.getFloat(18, counter+1));
+    
+    }
 }
 
 //--------------------------------------------------------------
