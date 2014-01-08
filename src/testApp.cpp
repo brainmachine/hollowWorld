@@ -10,7 +10,7 @@ void testApp::setup(){
     
     // Set mesh mode to points
 //    mesh.setMode(OF_PRIMITIVE_POINTS);
-    mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+    mesh.setMode(OF_PRIMITIVE_TRIANGLES);
     // GL Settings
 	ofEnableDepthTest();
     glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
@@ -24,6 +24,7 @@ void testApp::setup(){
     jumpSize = 100;
     
     // Max and min coordinates
+    maxX = 0;
     
     // Get x, y, z coordinates from csv data
 	cout << "Maximum Size:";
@@ -44,7 +45,7 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	
+
 }
 
 //--------------------------------------------------------------
@@ -54,6 +55,10 @@ void testApp::draw(){
 	cam.end();
 }
 
+//--------------------------------------------------------------
+void getExtremeVec(ofVec3f vector) {
+
+}
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
 	ofLogNotice(ofToString(key));

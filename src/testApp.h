@@ -22,6 +22,8 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 	
+    
+    void getExtremeVec(ofVec3f vector);
     ofxCsv csv;
     
     ofEasyCam cam;
