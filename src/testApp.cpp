@@ -22,7 +22,7 @@ void testApp::setup(){
    // cam.setPosition(camX, camY, camZ);
    
     speed = 1;
-    jumpSize = 100;
+    jumpSize = 10;
     
     // Max and min coordinates
     maxX, maxY, maxZ, minX, minY, minZ = 0;
@@ -63,7 +63,7 @@ void testApp::setup(){
         }
     }
     
-     cam.setPosition(maxX, maxY, maxZ); // start at the edge of the universe
+     cam.setPosition(maxX, maxY, minZ); // start at the edge of the universe
     
 	ofLogNotice("maxX "+ofToString(maxX)+" maxY "+ofToString(maxY)+" maxZ" + ofToString(maxZ));
     ofLogNotice("minX "+ofToString(minX)+" minY "+ofToString(minY)+" minZ" + ofToString(minZ));
