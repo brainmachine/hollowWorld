@@ -12,7 +12,8 @@ void testApp::setup(){
     mesh.setMode(OF_PRIMITIVE_POINTS);
     
     // GL Settings
-	glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
+	ofEnableDepthTest();
+    glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
     
     // Cam stuff
     camX = 0;
@@ -28,13 +29,13 @@ void testApp::setup(){
     ofLogNotice(ofToString(csv.data.size()));
     for (int i = 0; i < csv.data.size(); i++) {
         // X value
-        ofLogNotice("X: "+ofToString(csv.data[i][17]+" Y: "+ofToString(csv.data[i][18])+" Z: "+ofToString(csv.data[i][19])));
+        //ofLogNotice("X: "+ofToString(csv.data[i][17]+" Y: "+ofToString(csv.data[i][18])+" Z: "+ofToString(csv.data[i][19])));
         //
         float x = csv.getFloat(i, 17);
         float y = csv.getFloat(i, 18);
         float z = csv.getFloat(i, 19);
-        ofVec3f pos(x, y, z);
-        mesh.addVertex(pos);
+        ofVec3f starPos(x, y, z);
+        mesh.addVertex(starPos);
     }
 	
 }

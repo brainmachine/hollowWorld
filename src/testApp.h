@@ -32,6 +32,7 @@ public:
     float maxX, maxY, maxZ;
     float minX, minY, minZ;
     
+    ofVec3f camPos;
     
     ofMesh mesh;
     
