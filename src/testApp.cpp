@@ -9,8 +9,8 @@ void testApp::setup(){
 	csv.loadFile(ofToDataPath("hygxyz.csv"));
     
     // Set mesh mode to points
-    mesh.setMode(OF_PRIMITIVE_POINTS);
-    
+//    mesh.setMode(OF_PRIMITIVE_POINTS);
+    mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
     // GL Settings
 	ofEnableDepthTest();
     glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
@@ -20,6 +20,8 @@ void testApp::setup(){
     camY = 0;
     camZ = 0;
     cam.setPosition(camX, camY, camZ);
+    speed = 1;
+    jumpSize = 100;
     
     // Max and min coordinates
     
@@ -34,8 +36,8 @@ void testApp::setup(){
         float x = csv.getFloat(i, 17);
         float y = csv.getFloat(i, 18);
         float z = csv.getFloat(i, 19);
-        ofVec3f starPos(x, y, z);
-        mesh.addVertex(starPos);
+        ofVec3f starVec(x, y, z);
+        mesh.addVertex(starVec);
     }
 	
 }
@@ -58,33 +60,42 @@ void testApp::keyPressed(int key){
     
     // Up key - Forward
     if (key == 357) {
-        camZ--;
+        camZ-=speed*jumpSize;
     }
     
     // Down key - backward
     else if (key == 359) {
-        camZ++;
+        camZ+=speed*jumpSize;
             }
     
     // Left
     else if (key == 356) {
-        camX--;
+        camX-=speed*jumpSize;
     }
     
     // Right
     else if (key == 358) {
-        camX++;
+        camX+=speed*jumpSize;
     }
     
     // U - Up
     else if (key == 117) {
-        camY++;
+        camY+=speed*jumpSize;
     }
     
     // J - Down
     else if (key == 106) {
-        camY--;
+        camY-=speed*jumpSize;
 
+    }
+    
+    // I key - Increase speed
+    else if (key == 105) {
+        speed*jumpSize++;
+    }
+    // K key - decrease (kill) speed
+    else if (key == 107) {
+        speed*jumpSize--;
     }
     cam.setPosition(camX, camY, camZ);
 }

@@ -23,18 +23,21 @@ public:
     void gotMessage(ofMessage msg);
 	
     ofxCsv csv;
-    ofxCsv csvRecorder;
-	
-    bool recordingMouse;
     
     ofEasyCam cam;
     float camX, camY, camZ;
     float maxX, maxY, maxZ;
     float minX, minY, minZ;
     
+    // Camera navigation
     ofVec3f camPos;
+    int speed;
+    int jumpSize;
     
+    // Star mesh network
     ofMesh mesh;
+    
+    
     
 };
 /*
