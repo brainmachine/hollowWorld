@@ -20,6 +20,8 @@ void testApp::setup(){
     camZ = 0;
     cam.setPosition(camX, camY, camZ);
     
+    // Max and min coordinates
+    
     // Get x, y, z coordinates from csv data
 	cout << "Maximum Size:";
 	cout << csv.data[0].max_size() << endl;

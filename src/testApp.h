@@ -29,6 +29,10 @@ public:
     
     ofEasyCam cam;
     float camX, camY, camZ;
+    float maxX, maxY, maxZ;
+    float minX, minY, minZ;
+    
+    
     ofMesh mesh;
     
 };
