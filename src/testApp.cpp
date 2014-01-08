@@ -73,14 +73,16 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
     counter++;
-    if (counter < csv.data.size()) {
-        ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter),csv.getFloat(17, counter+1), csv.getFloat(18, counter+1));
     
-    }
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+    if (counter < csv.data.size()) {
+        ofLogNotice("about to draw a line");
+        ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter),csv.getFloat(17, counter+1), csv.getFloat(18, counter+1));
+        
+    }
     cam.begin();
 	mesh.draw();
 	cam.end();
