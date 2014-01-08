@@ -9,8 +9,8 @@ void testApp::setup(){
 	csv.loadFile(ofToDataPath("hygxyz.csv"));
     
     // Set mesh mode to points
-//    mesh.setMode(OF_PRIMITIVE_POINTS);
-    mesh.setMode(OF_PRIMITIVE_TRIANGLES);
+    mesh.setMode(OF_PRIMITIVE_POINTS);
+//    mesh.setMode(OF_PRIMITIVE_TRIANGLES);
     // GL Settings
 	ofEnableDepthTest();
     glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
@@ -19,12 +19,14 @@ void testApp::setup(){
     camX = 0;
     camY = 0;
     camZ = 0;
-    cam.setPosition(camX, camY, camZ);
+   // cam.setPosition(camX, camY, camZ);
+   // cam.setPosition(9.99632e+06,9.99632e+06,9.99632e+06); // start at the edge of the universe
     speed = 1;
     jumpSize = 100;
     
     // Max and min coordinates
-    maxX = 0;
+    maxX, maxY, maxZ, minX, minY, minZ = 0;
+    
     
     // Get x, y, z coordinates from csv data
 	cout << "Maximum Size:";
@@ -39,8 +41,17 @@ void testApp::setup(){
         float z = csv.getFloat(i, 19);
         ofVec3f starVec(x, y, z);
         mesh.addVertex(starVec);
+        
+        //min and max values
+        if (maxX < x) {
+            maxX = x;
+        }
+        if (maxY < y) {
+            maxY = y;
+        }
+        
     }
-	
+	ofLogNotice("maxX "+ofToString(maxX)+" maxY "+ofToString(maxY));
 }
 
 //--------------------------------------------------------------
@@ -59,6 +70,7 @@ void testApp::draw(){
 void getExtremeVec(ofVec3f vector) {
 
 }
+
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
 	ofLogNotice(ofToString(key));
