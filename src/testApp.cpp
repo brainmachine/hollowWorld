@@ -81,7 +81,8 @@ void testApp::draw(){
     if (counter < csv.data.size()) {
         ofLogNotice("about to draw a line");
         //ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter),csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1), csv.getFloat(19, counter+1));
-        ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter), csv.getFloat(19, counter), csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1));
+       // ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter), csv.getFloat(19, counter), csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1));
+        ofLine(0,0,0, csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1));
         
         
     }
