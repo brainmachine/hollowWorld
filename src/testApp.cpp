@@ -41,33 +41,17 @@ void testApp::setup(){
         float y = csv.getFloat(i, 18);
         float z = csv.getFloat(i, 19);
         ofVec3f starVec(x, y, z);
+        
         mesh.addVertex(starVec);
         
+        
         //min and max values
-        if (maxX < x) {
-            maxX = x;
-        }
-        if (maxY < y) {
-            maxY = y;
-        }
-        if (maxZ < z) {
-            maxZ = z;
-        }
-        if (minX > x) {
-            minX = x;
-        }
-        if (minY > y) {
-            minY = y;
-        }
-        if (minZ > z) {
-            minZ = z;
-        }
+        
     }
     
      cam.setPosition(maxX, maxY, minZ); // start at the edge of the universe
     
-	ofLogNotice("maxX "+ofToString(maxX)+" maxY "+ofToString(maxY)+" maxZ" + ofToString(maxZ));
-    ofLogNotice("minX "+ofToString(minX)+" minY "+ofToString(minY)+" minZ" + ofToString(minZ));
+	
 }
 
 //--------------------------------------------------------------
@@ -79,7 +63,7 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     if (counter < csv.data.size()) {
-        ofLogNotice("about to draw a line");
+      //  ofLogNotice("about to draw a line");
         //ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter),csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1), csv.getFloat(19, counter+1));
        // ofLine(csv.getFloat(17, counter), csv.getFloat(18, counter), csv.getFloat(19, counter), csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1));
         ofLine(0,0,0, csv.getFloat(17, counter+1), csv.getFloat(18, counter+1), csv.getFloat(19, counter+1));
@@ -87,13 +71,33 @@ void testApp::draw(){
         
     }
     cam.begin();
-	//mesh.draw();
+	mesh.draw();
 	cam.end();
 }
 
 //--------------------------------------------------------------
 void getExtremeVec(ofVec3f vector) {
-
+    if (maxX < x) {
+        maxX = x;
+    }
+    if (maxY < y) {
+        maxY = y;
+    }
+    if (maxZ < z) {
+        maxZ = z;
+    }
+    if (minX > x) {
+        minX = x;
+    }
+    if (minY > y) {
+        minY = y;
+    }
+    if (minZ > z) {
+        minZ = z;
+    }
+    ofLogNotice("maxX "+ofToString(maxX)+" maxY "+ofToString(maxY)+" maxZ" + ofToString(maxZ));
+    ofLogNotice("minX "+ofToString(minX)+" minY "+ofToString(minY)+" minZ" + ofToString(minZ));
+    
 }
 
 //--------------------------------------------------------------
